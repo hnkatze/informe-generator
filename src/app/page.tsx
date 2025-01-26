@@ -54,20 +54,6 @@ export default function Page() {
     }
   }
 
-  const editRow = (id: number) => {
-    const rowToEdit = rows.find((row) => row.id === id)
-    if (rowToEdit) {
-      setDescripcion(rowToEdit.descripcion)
-      setComercio(rowToEdit.comercio)
-      setTotal(rowToEdit.total.toString())
-      setFecha(rowToEdit.fecha) // Set fecha for editing
-      setEditingId(id)
-    }
-  }
-
-  const deleteRow = (id: number) => {
-    setRows(rows.filter((row) => row.id !== id))
-  }
 
   const totalSum = rows.reduce((sum, row) => sum + row.total, 0)
 
